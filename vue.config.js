@@ -1,4 +1,8 @@
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/dingding-sdk'
+    : '/',
+  productionSourceMap: false,
   css: {
     loaderOptions: {
       stylus: {

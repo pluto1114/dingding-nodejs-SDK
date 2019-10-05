@@ -1,0 +1,61 @@
+::-webkit-scrollbar {
+    /*隐藏滚轮*/
+    display: none;
+}
+
+.ub{
+    display: flex;
+}
+.ub-v{
+    display: flex;
+    flex-direction:column;
+}
+.uc{
+    justify-content: center;
+    align-items: center;
+}
+.uf-jc{
+    justify-content: center;
+}
+.uf-ac{
+    align-items: center;
+}
+.ufe{
+    justify-content: flex-end;
+}
+.uf-1{
+    flex:1;
+}
+.uf-2{
+    flex:2;
+}
+.uf-3{
+    flex:3;
+}
+
+.bar {
+    height: 10px;
+    background-color: #eee;
+}
+.pad{
+    padding: 10px;
+}
+.line-text-1{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.line-text-2{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.line-text-3{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+

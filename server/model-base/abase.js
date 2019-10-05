@@ -9,8 +9,8 @@ function base(table) {
 	obj.getBy = (param) => {
 		return obj.findOne({ where: param });
 	}
-	obj.findBy = (param) => {
-		return obj.findAll({ where: param })
+	obj.findBy = (whereParam,otherParams) => {
+		return obj.findAll({ where: whereParam,...otherParams })
 	}
 	obj.findByOrder = (param,order) => {
 		return obj.findAll({ where: param ,order})

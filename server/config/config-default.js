@@ -1,10 +1,10 @@
 var config = {
-  database: 'cfo-share', 
+  database: 'dingding-sdk', 
   dialect:'mysql',
-  username: 'cfo', 
-  password: 'cfo-Pluto-1114',
-  host: 'bj-cdb-h96fxkjf.sql.tencentcdb.com',
-  port: 63677,
+  username: 'root', 
+  password: 'pluto1114',
+  host: '94.191.121.109',
+  port: 3306,
   secret:'pluto1114',
 };
 

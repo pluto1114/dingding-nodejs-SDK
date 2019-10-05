@@ -24,13 +24,20 @@ const model = require('../model');
 const service = require('../service');
 const r=require('../dto/resp');
 const Op = require('sequelize').Op;
-var fetch${_.capitalize(name)} = async (ctx, next) => {
-    let items = [];
-    ctx.body=r().setItems(items);
-};
-
+class ${_.capitalize(name)}{
+    async index(ctx){
+        let items = [];
+        ctx.body=r().setItems(items);
+    }
+    async show(ctx){
+        let {id}=ctx.params;
+        ctx.body=r().setItemMap({id})
+    }
+}
+let ${name}=new ${_.capitalize(name)}()
 module.exports = {
-    'GET ${prefix}/${name}': fetch${_.capitalize(name)},
+    'GET ${prefix}/${name}/index': ${name}.index,
+    'GET ${prefix}/${name}/:id': ${name}.show,
 };`
     })
 }

@@ -21,6 +21,10 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING(64),
 			allowNull: true
 		},
+		departmentName: {
+			type: DataTypes.STRING(255),
+			allowNull: true
+		},
 		mobile: {
 			type: DataTypes.STRING(64),
 			allowNull: true
@@ -54,42 +58,28 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true,
 			defaultValue: '0'
 		},
+		upDepart: {
+			type: DataTypes.BIGINT,
+			allowNull: true
+		},
 		ukey: {
 			type: DataTypes.STRING(64),
 			allowNull: true
 		},
+		point: {
+			type: DataTypes.INTEGER(11),
+			allowNull: true,
+			defaultValue: '0'
+		},
 		god: {
-			type: DataTypes.INTEGER(2),
+			type: DataTypes.INTEGER(1),
 			allowNull: false,
 			defaultValue: '0'
 		},
-		authed: {
-			type: DataTypes.INTEGER(2),
-			allowNull: true,
-			defaultValue: '0'
-		},
-		orgid: {
-			type: DataTypes.STRING(20),
-			allowNull: true
-		},
 		role: {
-			type: DataTypes.STRING(20),
-			allowNull: true,
-			defaultValue: 'ddguest'
-		},
-		topDeptId: {
-			type: DataTypes.BIGINT,
-			allowNull: true,
-			defaultValue: '0'
-		},
-		departCascadeName: {
-			type: DataTypes.STRING(500),
-			allowNull: true
-		},
-		orderCount: {
-			type: DataTypes.INTEGER(11).UNSIGNED,
-			allowNull: true,
-			defaultValue: '0'
+			type: DataTypes.STRING(16),
+			allowNull: false,
+			defaultValue: 'P'
 		}
 	}, {
 		tableName: 't_user',

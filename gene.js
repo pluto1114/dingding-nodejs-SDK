@@ -21,7 +21,7 @@ const auto = new SeqAuto(config.database, config.username, config.password, {
 })
 const modelStrArr = []
 for (let table of tables) {
-    let name = table.indexOf("_") > 0 ? table.substring(table.indexOf("_")) : table
+    let name = table.includes("t_") ? table.substring(table.indexOf("t_")+1) : table
 
     console.log(name)
     modelStrArr.push({
@@ -41,7 +41,7 @@ auto.run(err => {
     }
     for (let modelObj of modelStrArr) {
         console.log(modelObj)
-        let file = path.resolve(__dirname, `${dir}/model`) + '/' + _.upperFirst(_.camelCase(modelObj.name)) + '.js'
+        let file = path.resolve(__dirname, `${dir}/model`) + '/' + _.camelCase(modelObj.name) + '.js'
         if (!fs.existsSync(file)) {
             fs.writeFileSync(file, modelObj.tpl)
         }
