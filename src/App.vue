@@ -56,11 +56,11 @@ export default {
   background-color: white;
 }
 .content {
-  padding: .6rem;
+  padding: .5rem;
 }
 
 .empty {
-  padding: 1rem;
+  padding: .5rem;
   text-align: center;
 }
 </style>

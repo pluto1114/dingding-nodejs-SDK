@@ -109,7 +109,7 @@
           <i class="font_family icon-tiaocha icon" aria-hidden="true"></i>
           <span>填写订单</span>
         </li>
-        
+
         <li class="ub" @click="showUs()">
           <i class="font_family icon-guanyuwomen icon" aria-hidden="true"></i>
           <span>关于我们</span>
@@ -128,24 +128,33 @@ export default {
     };
   },
   computed: {
-    ...mapState(["indexNum", "dduser"])
+    ...mapState(["dduser", "remote"])
   },
   created() {
-    this.fetchMyOrderCount({ userid: this.dduser.userid }).then(data => {
-      let map = data.itemMap;
-      this.unFinCount = map.unfinCount;
-      this.finCount = map.finCount;
-    });
+    if (this.remote) {
+      this.$root.$on("dduser-init", () => {
+        this.init();
+      });
+    } else {
+      this.init();
+    }
   },
   mounted() {},
   methods: {
+    init() {
+      this.fetchMyOrderCount({ userid: this.dduser.userid }).then(data => {
+        let map = data.itemMap;
+        this.unFinCount = map.unfinCount;
+        this.finCount = map.finCount;
+      });
+    },
     onUnFinClick() {
       this.$router.push({ name: "OrderList" });
     },
     onFinClick() {
       this.$router.push({ name: "OrderList" });
     },
-    
+
     showUs() {
       this.$createDialog({
         type: "alert",

@@ -28,6 +28,7 @@ class Order {
             createtime: new Date(),
             ...body
         })
+        service.process.createTask({ukey:ctx.ukey,orderId:order.orderId})
         ctx.body = r().setItemMap({ order })
     }
     async finish(ctx) {
@@ -35,6 +36,7 @@ class Order {
         const order=await model.order.getBy({orderId:body.orderId})
         order.orderStatus='orderFinish'
         await order.save()
+        service.process.cancelTask({ukey:ctx.ukey,orderId:order.orderId})
         ctx.body = r()
     }
 }

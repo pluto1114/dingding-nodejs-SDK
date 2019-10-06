@@ -14,7 +14,7 @@ export default new Vuex.Store({
   state: {
     host: HOST,
     remote:remote,
-    dduser: remote ? null : { userid: '09441216131253154',role:'D', upDepart:319411090, name: '高健',departmentName:'行业应用与软件研发团队', mobile: '18698401720', avatar: 'https://static.dingtalk.com/media/lADPBbCc1a_esH_NAkDNAkA_576_576.jpg', points: '16', leader: true, point:0, god:1, ukey:'nmlt', },
+    dduser: remote ? null : { userid: 'manager8036', upDepart:319411090, name: '高健', mobile: '18698401720', avatar: 'https://static.dingtalk.com/media/lADPBbCc1a_esH_NAkDNAkA_576_576.jpg', points: '16', leader: true, point:0, god:1, ukey:'nmlt', },
     // dduser: null,
   },
   mutations: {

@@ -8,6 +8,7 @@ const cryptoKit=require('../kits/cryptoKit')
 var _merge = require('lodash/merge')
 obj.gettoken = async (ukey) => {
     let ddconfig = await obj.getBy({ ukey})
+    // console.log('ddconfig',ddconfig)
     let date=new Date()
     date.setHours(date.getHours()-1)
     if(ddconfig.token_begin_time>date){
@@ -80,6 +81,7 @@ obj.getJsconfig=async (ukey)=>{
 
 obj.callApi=async (ukey,options)=>{
     let access_token= await obj.gettoken(ukey)
+    console.log('access_token',access_token)
     let DEFAULTS = {
         url: 'https://oapi.dingtalk.com/',
         params: {access_token}

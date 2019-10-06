@@ -62,6 +62,10 @@ module.exports = function(sequelize, DataTypes) {
 		url: {
 			type: DataTypes.STRING(256),
 			allowNull: true
+		},
+		process_code: {
+			type: DataTypes.STRING(64),
+			allowNull: true
 		}
 	}, {
 		tableName: 'dd_config',

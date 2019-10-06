@@ -1,12 +1,12 @@
 <style lang="less" scoped>
 .time {
-  font-size: 0.8em;
+  font-size: 0.4rem;
   color: #999;
 }
 .avatar {
-  width: 1.8em;
-  height: 1.8em;
-  margin-right: 0.6em;
+  width: .8rem;
+  height: .8rem;
+  margin-right: .2rem;
 }
 .suggestion {
   width: 100%;
@@ -20,11 +20,11 @@
       <img src="../assets/photo.png" alt class="avatar" />
       <div class="uf-1 ub-v">
         <cube-input v-model="orderName" placeholder="请填写订单名称"></cube-input>
-        <div style="padding-top:1em;">
+        <div style="padding-top:.4rem;">
           <cube-input v-model="totalPrice" type="number" placeholder="请填写订单总价"></cube-input>
         </div>
-        <div style="padding-top:1em;">
-          <cube-button @click="onSubmit">提交</cube-button>
+        <div style="padding-top:.4rem;">
+          <cube-button :disabled="disabled" @click="onSubmit">提交</cube-button>
         </div>
       </div>
     </div>
@@ -37,7 +37,8 @@ export default {
     return {
       orderName: "",
       time: "",
-      totalPrice: ""
+      totalPrice: "",
+      disabled:false
     };
   },
   computed: {
@@ -57,6 +58,7 @@ export default {
         toast.show();
         return;
       }
+      this.disabled=true;
       this.saveOrder({
         orderName: this.orderName,
         userid: this.dduser.userid,

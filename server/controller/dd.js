@@ -17,7 +17,7 @@ class Dd{
     let info = await model.DdConfig.callApi(ctx.ukey, options)
     console.log('info', info)
   
-    let user = await model.User.getBy({ userid: info.userid })
+    let user = await model.user.getBy({ userid: info.userid })
   
     if (user) {
       let lasttime = user.accesstime
@@ -26,7 +26,7 @@ class Dd{
       await user.save()
       user.accesstime = lasttime
     } else {
-      user= await model.User.createUser(info,ukey)
+      user= await model.user.createUser(info.userid,ukey)
     }
   
     ctx.body = r().setItemMap({ user })
