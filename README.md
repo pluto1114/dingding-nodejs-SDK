@@ -9,7 +9,9 @@ npm install
 ```
 npm run serve
 ```
-
+```
+node app
+```
 ### Compiles and minifies for production
 ```
 npm run build
