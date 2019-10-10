@@ -16,16 +16,15 @@ node app
 ```
 npm run build
 ```
+## 应用截图
 
-### Run your tests
-```
-npm run test
-```
+## Screenshots
+![image](https://github.com/pluto1114/vue-music163/blob/master/screenshots/S91006-001.png)
 
-### Lints and fixes files
-```
-npm run lint
-```
+![image](https://github.com/pluto1114/vue-music163/blob/master/screenshots/S91006-002.png)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![image](https://github.com/pluto1114/vue-music163/blob/master/screenshots/S91006-003.png)
+
+![image](https://github.com/pluto1114/vue-music163/blob/master/screenshots/S91006-004.png)
+
+![image](https://github.com/pluto1114/vue-music163/blob/master/screenshots/S91006-005.png)
