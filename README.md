@@ -19,12 +19,12 @@ npm run build
 ## 应用截图
 
 ## Screenshots
-![image](https://github.com/pluto1114/vue-music163/blob/master/screenshots/S91006-001.png)
+![image](https://github.com/pluto1114/dingding-nodejs-SDK/blob/master/screenshots/S91006-001.png)
 
-![image](https://github.com/pluto1114/vue-music163/blob/master/screenshots/S91006-002.png)
+![image](https://github.com/pluto1114/dingding-nodejs-SDK/blob/master/screenshots/S91006-002.png)
 
-![image](https://github.com/pluto1114/vue-music163/blob/master/screenshots/S91006-003.png)
+![image](https://github.com/pluto1114/dingding-nodejs-SDK/blob/master/screenshots/S91006-003.png)
 
-![image](https://github.com/pluto1114/vue-music163/blob/master/screenshots/S91006-004.png)
+![image](https://github.com/pluto1114/dingding-nodejs-SDK/blob/master/screenshots/S91006-004.png)
 
-![image](https://github.com/pluto1114/vue-music163/blob/master/screenshots/S91006-005.png)
+![image](https://github.com/pluto1114/dingding-nodejs-SDK/blob/master/screenshots/S91006-005.png)
