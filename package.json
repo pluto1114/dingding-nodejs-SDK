@@ -52,9 +52,9 @@
       "eslint:recommended"
     ],
     "rules": {
-      "no-console":"off",
-      "no-unused-vars":"off",
-      "no-undef":"off"
+      "no-console": "off",
+      "no-unused-vars": "off",
+      "no-undef": "off"
     },
     "parserOptions": {
       "parser": "babel-eslint"
