@@ -8,10 +8,9 @@ const cryptoKit=require('../kits/cryptoKit')
 var _merge = require('lodash/merge')
 obj.gettoken = async (ukey) => {
     let ddconfig = await obj.getBy({ ukey})
-    // console.log('ddconfig',ddconfig)
     let date=new Date()
     date.setHours(date.getHours()-1)
-    if(ddconfig.token_begin_time>date){
+    if(ddconfig.ticket_begin_time.getTime()>date.getTime()){
         console.log('token used')
         return ddconfig.access_token
     }
@@ -35,15 +34,16 @@ obj.gettoken = async (ukey) => {
             appsecret: ddconfig.appsecret,
         }
     }
-    let {data} = await axios(options)
-    await ddconfig.update({access_token: data.access_token,token_begin_time:new Date()})
+    
+    let { data } = await axios(options)
+    await ddconfig.update({ access_token: data.access_token, token_begin_time: new Date() })
     return data.access_token
 }
 obj._getticket = async (ukey,access_token) => {
     let ddconfig = await obj.getBy({ ukey})
     let date=new Date()
     date.setHours(date.getHours()-1)
-    if(ddconfig.ticket_begin_time>date){
+    if(ddconfig.ticket_begin_time.getTime()>date.getTime()){
         console.log('ticket used')
         return ddconfig.ticket
     }
@@ -70,6 +70,7 @@ obj.getJsconfig=async (ukey)=>{
     let ddconfig = await obj.getBy({ ukey})
     let timeStamp=new Date().getTime()
     let nonceStr=config.secret
+
     return {
         agentId:ddconfig.agentid,
         corpId:ddconfig.corpid,
@@ -81,7 +82,6 @@ obj.getJsconfig=async (ukey)=>{
 
 obj.callApi=async (ukey,options)=>{
     let access_token= await obj.gettoken(ukey)
-    console.log('access_token',access_token)
     let DEFAULTS = {
         url: 'https://oapi.dingtalk.com/',
         params: {access_token}
@@ -89,7 +89,6 @@ obj.callApi=async (ukey,options)=>{
     options=_merge(DEFAULTS,options)
     console.log('options',options)
     let {data} = await axios(options)
-    console.log(data)
     return data
 }
 
